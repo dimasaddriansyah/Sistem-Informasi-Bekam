@@ -2,111 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Pesanan;
-use App\Transformers\PesananTransformer;
 use Illuminate\Http\Request;
+use App\Layanan;
+use App\Mitra;
+use App\Pesanan;
 
 class PesananController extends Controller
 {
-    public function index(Pesanan $pesanan)
+    public function index()
     {
-        $pesanan = $pesanan->all();
-
-        return fractal()
-            ->collection($pesanan)
-            ->transformWith(new PesananTransformer)
-            ->toArray();
-    }
-
-    public function indexById(Pesanan $pesanan, $id_pesanan)
-    {
-        $pesanan = Pesanan::where('id_pesanan', $id_pesanan)->first();
-
-        if ($pesanan) {
-            return fractal()
-                ->item($pesanan)
-                ->transformWith(new PesananTransformer)
-                ->toArray();
-        }
-
-        return response()->json([
-            "message" => "PUT Method With Id " . $id_pesanan . " Not Found",
-        ], 400);
-    }
-
-    public function add(Request $request, Pesanan $pesanan)
-    {
-        /*
-        $this->validate(
-            $request,
-            [
-                'bukti_pembayaran'  => 'required|mimes:png,jpg|unique:pesanan',
-
-            ],
-            [
-                'bukti_pembayaran.required' => 'Harus Mengisi Bagian Bukti Pembayaran !',
-                'bukti_pembayaran.unique' => 'Bukti Pembayaran Sudah Tersedia !',
-            ]
-        );
-        */
-        $pesanan = $pesanan->create([
-            'id_pelanggan'        => $request->id_pelanggan,
-            'id_layanan'          => $request->id_layanan,
-            'bukti_pembayaran'    => $request->bukti_pembayaran,
-            'tanggal'             => $request->tanggal
-        ]);
-
-        $response = fractal()
-            ->item($pesanan)
-            ->transformWith(new PesananTransformer)
-            ->toArray();
-
-
-        return response()->json([
-            $response,
-            "message" => "Tambah Data Pesanan Berhasil"
-        ], 201);
-    }
-
-    public function update(Request $request, $id_pesanan)
-    {
-        $pesanan = Pesanan::where('id_pesanan', $id_pesanan)->first();
-
-        if ($pesanan) {
-            $pesanan->id_pelanggan = $request->id_pelanggan ? $request->id_pelanggan : $pesanan->id_pelanggan;
-            $pesanan->id_layanan = $request->id_layanan ? $request->id_layanan : $pesanan->id_layanan;
-            $pesanan->bukti_pembayaran = $request->bukti_pembayaran ? $request->bukti_pembayaran : $pesanan->bukti_pembayaran;
-            $pesanan->tanggal = $request->tanggal ? $request->tanggal : $pesanan->tanggal;
-            $pesanan->save();
-
-            $response = fractal()
-                ->item($pesanan)
-                ->transformWith(new PesananTransformer)
-                ->toArray();
-
-            return response()->json([
-                "message" => "Update Data Pesanan Id " . $id_pesanan . " Berhasil",
-                $response
-
-            ]);
-        }
-
-        return response()->json([
-            "message" => "PUT Method With Id " . $id_pesanan . " Not Found",
-        ], 400);
-    }
-
-    public function delete(Pesanan $pesanan, $id_pesanan)
-    {
-        $pesanan = Pesanan::where('id_pesanan', $id_pesanan)->first();
-        if ($pesanan) {
-            $pesanan->delete();
-            return response()->json([
-                "message" => "Pesanan Id " . $id_pesanan . " Deleted",
-            ]);
-        }
-        return response()->json([
-            "message" => "Pesanan Id " . $id_pesanan . " Not Found",
-        ], 400);
+        $mitra = Mitra::get();
+        $layanan = Layanan::get();
+        $pesanan = Pesanan::get();
+        return view('mitra.index', compact('mitra', 'layanan', 'pesanan'));
     }
 }

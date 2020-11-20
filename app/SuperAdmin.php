@@ -2,16 +2,29 @@
 
 namespace App;
 
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 
-class SuperAdmin extends Model
+class SuperAdmin extends Authenticatable
 {
-    protected $table = 'superadmin';
-    protected $primaryKey = 'id_superadmin';
+    use Notifiable;
+
+    protected $table = "superadmin";
+
+    protected $primaryKey = "id_superadmin";
+
     protected $fillable = [
-        'nama', 'email', 'api_token', 'password',
+        'nama', 'email', 'password',
     ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
     protected $hidden = [
-        'password',
+        'password', 'remember_token',
     ];
 }

@@ -13,10 +13,10 @@ class SuperAdminSeeder extends Seeder
     public function run()
     {
         SuperAdmin::create([
-            'nama' => 'Super Admin',
-            'email' => 'superadmin@gmail.com',
-            'password' => bcrypt('superadmin'),
-            'api_token' => bcrypt('superadmin@gmail.com'),
+            'nama' => 'super',
+            'email' => 'super@gmail.com',
+            'password' => bcrypt('super'),
+            'api_token' => bcrypt('super@gmail.com'),
         ]);
     }
 }

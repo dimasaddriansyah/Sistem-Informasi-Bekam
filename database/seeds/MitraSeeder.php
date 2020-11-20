@@ -13,10 +13,12 @@ class MitraSeeder extends Seeder
     public function run()
     {
         Mitra::create([
-            'nama' => 'Zakiyah',
-            'email' => 'zakiyah@gmail.com',
-            'password' => bcrypt('zakiyah'),
-            'api_token' => bcrypt('zakiyah@gmail.com'),
+            'nama' => 'mitra',
+            'email' => 'mitra@gmail.com',
+            'no_hp' => "0888",
+            'alamat' => "imy",
+            'password' => bcrypt('mitra'),
+            'api_token' => bcrypt('mitra@gmail.com'),
         ]);
     }
 }

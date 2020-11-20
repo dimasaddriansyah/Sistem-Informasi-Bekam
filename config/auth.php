@@ -46,33 +46,25 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
-        'mitra' => [
-            'driver' => 'session',
-            'provider' => 'mitra',
-        ],
 
-        'apimitra' => [
-            'driver' => 'token',
-            'provider' => 'mitra',
-        ],
-
-        'pelanggan' => [
-            'driver' => 'session',
-            'provider' => 'pelanggan',
-        ],
-
-        'apipelanggan' => [
-            'driver' => 'token',
-            'provider' => 'pelanggan',
-        ],
         'superadmin' => [
             'driver' => 'session',
             'provider' => 'superadmin',
         ],
 
-        'apisuperadmin' => [
+        'apisuper' => [
             'driver' => 'token',
             'provider' => 'superadmin',
+        ],
+
+        'mitra' => [
+            'driver' => 'session',
+            'provider' => 'mitra',
+        ],
+
+        'apipegawai' => [
+            'driver' => 'token',
+            'provider' => 'mitra',
         ],
     ],
 
@@ -98,18 +90,19 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
-        'mitra' => [
-            'driver' => 'eloquent',
-            'model' => App\login_mitra::class,
-        ],
-        'pelanggan' => [
-            'driver' => 'eloquent',
-            'model' => App\login_pelanggan::class,
-        ],
         'superadmin' => [
             'driver' => 'eloquent',
-            'model' => App\login_superadmin::class,
+            'model' => App\SuperAdmin::class,
         ],
+        'mitra' => [
+            'driver' => 'eloquent',
+            'model' => App\Mitra::class,
+        ],
+
+        // 'users' => [
+        //     'driver' => 'database',
+        //     'table' => 'users',
+        // ],
     ],
 
     /*
