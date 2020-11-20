@@ -19,7 +19,7 @@ class LoginController extends Controller
         return view('login');
     }
 
-    public function loginPost(Request $request)
+    public function loginPost(Request $request, Pelanggan $pelanggan)
     {
         if (Auth::guard('superadmin')->attempt(['email' => $request->email, 'password' => $request->password])) {
             // if successful, then redirect to their intended location
@@ -28,7 +28,16 @@ class LoginController extends Controller
         } else if (Auth::guard('mitra')->attempt(['email' => $request->email, 'password' => $request->password])) {
             alert()->basic('Anda Login Sebagai Mitra', 'Hello');
             return redirect()->intended('/mitra/index');
-        } else {
+        } else if(Auth::guard('pelanggan')->attempt(['email' => $request->email, 'password' => $request->password])){
+            $pelanggan = $pelanggan->find(Auth::guard('pelanggan')->user()->id_pelanggan);
+            return fractal()
+                ->item($pelanggan)
+                ->transformWith(new PelangganTransformer)
+                ->addMeta([
+                    'token' => $pelanggan->api_token,
+                ])
+                ->toArray();
+        }else {
             return redirect('/login')->with('alert', 'Email atau Password Salah !');
         }
     }

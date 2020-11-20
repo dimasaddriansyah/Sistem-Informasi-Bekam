@@ -52,7 +52,7 @@ return [
             'provider' => 'superadmin',
         ],
 
-        'apisuper' => [
+        'apisuperadmin' => [
             'driver' => 'token',
             'provider' => 'superadmin',
         ],
@@ -62,9 +62,19 @@ return [
             'provider' => 'mitra',
         ],
 
-        'apipegawai' => [
+        'apimitra' => [
             'driver' => 'token',
             'provider' => 'mitra',
+        ],
+
+        'pelanggan' => [
+            'driver' => 'session',
+            'provider' => 'pelanggan',
+        ],
+
+        'apipelanggan' => [
+            'driver' => 'token',
+            'provider' => 'pelanggan',
         ],
     ],
 
@@ -97,6 +107,10 @@ return [
         'mitra' => [
             'driver' => 'eloquent',
             'model' => App\Mitra::class,
+        ],
+        'pelanggan' => [
+            'driver' => 'eloquent',
+            'model' => App\Pelanggan::class,
         ],
 
         // 'users' => [
