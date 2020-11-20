@@ -137,22 +137,11 @@
                 <p>Dashboard</p>
               </a>
             </li>
-              <li class="nav-item has-treeview">
-                <a href="/tampilan-admin/pages/forms/validation.html" class="nav-link">
-                  <i class="nav-icon fas fa-edit"></i>
-                  <p>Forms</p>
-                </a>
-             </li>
-            <li class="nav-item has-treeview">
-                <a href="/tampilan-admin/pages/tables/data.html" class="nav-link">
-                  <i class="nav-icon fas fa-table"></i>
-                  <p>Tables</p>
-                </a>
-              </li>
+
 
             <li class="nav-header">MASTER DATA</li>
               <li class="nav-item">
-                <a href="pages/gallery.html" class="nav-link">
+                <a href="{{ (url('/mitra/layanan/index')) }}" class="nav-link">
                   <i class="nav-icon fas fa-book"></i>
                   <p>Data Layanan</p>
                 </a>
@@ -463,7 +452,7 @@
                           src="dist/img/user3-128x128.jpg"
                           alt="message user image"
                         />
-                        <!-- /.direct-chat-img -->
+                        <   !-- /.direct-chat-img -->
                         <div class="direct-chat-text">I would love to.</div>
                         <!-- /.direct-chat-text -->
                       </div>

@@ -10,7 +10,8 @@ class LayananController extends Controller
 {
     public function index()
     {
-        return view('mitra.layanan.index');
+        $layanan = Layanan::all();
+        return view('mitra.layanan.index', compact('layanan'));
     }
 
     public function showCreate()
@@ -34,7 +35,7 @@ class LayananController extends Controller
     public function showEdit($id_layanan){
         $layanan = Layanan::where('id_layanan', $id_layanan)->first();
 
-        return view('/mitra/admin/edit', compact('layanan'));
+        return view('/mitra/layanan/edit', compact('layanan'));
     }
 
     public function edit(Request $request,$id_layanan)

@@ -66,19 +66,21 @@
       <!-- Main Sidebar Container -->
       <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="/tampilan-admin/index.htmll" class="brand-link">
+        <a href="index3.html" class="brand-link">
           <img
             src="/tampilan-admin/dist/img/AdminLTELogo.png"
             alt="AdminLTE Logo"
             class="brand-image img-circle elevation-3"
             style="opacity: 0.8"
           />
-          <span class="brand-text font-weight-light">Sistem Informasi Bekam</span>
+          <span class="brand-text font-weight-light"
+            >Sistem Informasi Bekam</span
+          >
         </a>
 
         <!-- Sidebar -->
         <div class="sidebar">
-          <!-- Sidebar user (optional) -->
+          <!-- Sidebar user panel (optional) -->
           <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
               <img
@@ -88,7 +90,7 @@
               />
             </div>
             <div class="info">
-              <a href="#" class="d-block">Singgih Maulana</a>
+              <a href="#" class="d-block">{{ Auth::guard('mitra')->user()->nama }}</a>
             </div>
           </div>
 
@@ -102,66 +104,29 @@
             >
               <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-              <li class="nav-item has-treeview">
-                <a href="/tampilan-admin/index.html" class="nav-link">
+               <li class="nav-item has-treeview">
+              <a href="./index.html" class="nav-link ">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
-                  <p>Dashboard</p>
-                </a>
-              </li>
+                <p>Dashboard</p>
+              </a>
+            </li>
 
-              <li class="nav-item has-treeview menu-open">
-                <a href="../forms/validation.html" class="nav-link active">
-                  <i class="nav-icon fas fa-edit"></i>
-                  <p>Forms</p>
-                </a>
-              </li>
 
-              <li class="nav-item has-treeview">
-                <a href="../tables/data.html" class="nav-link">
-                  <i class="nav-icon fas fa-table"></i>
-                  <p>Tables</p>
-                </a>
-              </li>
-              <li class="nav-header">EXAMPLES</li>
+            <li class="nav-header">MASTER DATA</li>
               <li class="nav-item">
-                <a href="../calendar.html" class="nav-link">
-                  <i class="nav-icon far fa-calendar-alt"></i>
-                  <p>
-                    Calendar
-                    <span class="badge badge-info right">2</span>
-                  </p>
+                <a href="{{ (url('/mitra/layanan/index')) }}" class="nav-link active">
+                  <i class="nav-icon fas fa-book"></i>
+                  <p>Data Layanan</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../gallery.html" class="nav-link">
-                  <i class="nav-icon far fa-image"></i>
-                  <p>Gallery</p>
-                </a>
-              </li>
-              <li class="nav-item has-treeview">
-                <a href="../examples/profile.html" class="nav-link">
+                <a href="pages/examples/profile.html" class="nav-link">
                   <i class="nav-icon fas fa-book"></i>
-                  <p>
-                    Profile
-                  </p>
+                  <p>Data Pesanan</p>
                 </a>
               </li>
-              <li class="nav-item has-treeview">
-                <a href="../examples/projects.html" class="nav-link">
-                  <i class="nav-icon far fa-plus-square"></i>
-                  <p>
-                    Projects
-                  </p>
-                </a>
-              </li>
-              <li class="nav-item has-treeview">
-                <a href="../examples/contacs.html" class="nav-link">
-                  <i class="nav-icon fas fa-book"></i>
-                  <p>
-                    contacs
-                  </p>
-                </a>
-              </li>
+              </ul>
+            </li>
             </ul>
           </nav>
           <!-- /.sidebar-menu -->
@@ -176,7 +141,7 @@
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-6">
-                <h1>Daftar Mitra</h1>
+                <h1>Tambah Layanan</h1>
               </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -199,83 +164,59 @@
                 <div class="card card-primary">
                   <div class="card-header">
                     <h3 class="card-title">
-                      <small>Form Daftar</small> Mitra
+                      <small>Form </small>Tambah Layanan
                     </h3>
                   </div>
                   <!-- /.card-header -->
                   <!-- form start -->
-                  <form role="form" id="quickForm">
+                  <form role="form" action="{{ url('/createPost') }}" method="post">
+                    @csrf
                     <div class="card-body">
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Nama Lengkap</label>
+                        <label for="exampleInputEmail1">Nama Layanan</label>
                         <input
-                          type="email"
-                          name="email"
+                          type="text"
+                          name="nama"
                           class="form-control"
-                          id="exampleInputEmail1"
-                          placeholder="Nama Lengkap"
+                          id="exampleInputnama"
+                          placeholder="Nama Layanan"
                         />
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
+                        <label for="exampleInputEmail1">Deskripsi</label>
                         <input
-                          type="email"
-                          name="email"
+                          type="text"
+                          name="deskripsi"
                           class="form-control"
-                          id="exampleInputEmail1"
-                          placeholder="Enter email"
+                          id="exampleInputdeskripsi"
+                          placeholder="Deskripsi Layanan"
                         />
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputEmail1">No.Handphone</label>
+                        <label for="exampleInputEmail1">harga</label>
                         <input
-                          type="No.Handphone"
-                          name="No.Handphone"
+                          type="number"
+                          name="harga"
                           class="form-control"
-                          id="exampleInputNo.Handphone"
-                          placeholder="No.Handphone"
-                        />
+                          id="exampleInputharga"
+                          placeholder="Harga"/>
                       </div>
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Alamat</label>
-                        <input
-                          type="Alamat"
-                          name="Alamat"
-                          class="form-control"
-                          id="exampleInputAlamat"
-                          placeholder="Alamat"
-                        />
+                      <label for="exampleInputEmail1">Pilih Layanan</label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="pilihan" id="exampleRadios1" value="Tunggu Di Rumah" checked>
+                        <label class="form-check-label" for="exampleRadios1">
+                          Tunggu Dirumah
+                        </label>
                       </div>
-                      <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input
-                          type="password"
-                          name="password"
-                          class="form-control"
-                          id="exampleInputPassword1"
-                          placeholder="Password"
-                        />
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="pilihan" id="exampleRadios2" value="Datang Ke Klinik">
+                        <label class="form-check-label" for="exampleRadios2">
+                          Datang Ke Klinik
+                        </label>
                       </div>
-                      <div class="form-group mb-0">
-                        <div class="custom-control custom-checkbox">
-                          <input
-                            type="checkbox"
-                            name="terms"
-                            class="custom-control-input"
-                            id="exampleCheck1"
-                          />
-                          <label
-                            class="custom-control-label"
-                            for="exampleCheck1"
-                            >I agree to the
-                            <a href="#">terms of service</a>.</label
-                          >
-                        </div>
-                      </div>
-                    </div>
                     <!-- /.card-body -->
                     <div class="card-footer">
-                      <button type="submit" class="btn btn-primary">
+                      <button class="btn btn-primary">
                         Submit
                       </button>
                     </div>
