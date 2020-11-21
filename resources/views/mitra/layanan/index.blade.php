@@ -6,41 +6,21 @@
     <title>Dashboard Mitra</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Font Awesome -->
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{ asset('/tampilan-admin/plugins/fontawesome-free/css/all.min.css') }}" />
-    <!-- Ionicons -->
+    <!-- IonIcons -->
     <link
       rel="stylesheet"
-      href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
-    />
-    <!-- Tempusdominus Bbootstrap 4 -->
-    <link
-      rel="stylesheet"
-      href="{{ asset('/tampilan-admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}"
-    />
-    <!-- iCheck -->
-    <link
-      rel="stylesheet"
-      href="{{ asset('/tampilan-admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}"
-    />
-    <!-- JQVMap -->
-    <link rel="stylesheet" href="{{ asset('/tampilan-admin/plugins/jqvmap/jqvmap.min.css') }}" />
+      href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('/tampilan-admin/dist/css/adminlte.min.css') }}" />
-    <!-- overlayScrollbars -->
-    <link
-      rel="stylesheet"
-      href="{{ asset('/tampilan-admin/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}"
-    />
-    <!-- Daterange picker -->
-    <link rel="stylesheet" href="{{ asset('/tampilan-admin/plugins/daterangepicker/daterangepicker.css') }}" />
-    <!-- summernote -->
-    <link rel="stylesheet" href="{{ asset('/tampilan-admin/plugins/summernote/summernote-bs4.css') }}" />
     <!-- Google Font: Source Sans Pro -->
     <link
       href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
       rel="stylesheet"
     />
+   <link rel="stylesheet" href="{{asset('tampilan-admin/plugins/datatables-bs4/css/dataTables.bootstrap4.css')}}">
+
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </head>
   <body class="hold-transition sidebar-mini layout-fixed">
@@ -196,7 +176,7 @@
                                             <td>{{$key+1}}</td>
                                             <td>{{$layanan->nama}}</td>
                                             <td>{{$layanan->deskripsi}}</td>
-                                            <td>{{$layanan->harga}}</td>
+                                            <td>@currency($layanan->harga)</td>
                                             <td>{{$layanan->pilihan}}</td>
                                             <td>
                                                 <center>
@@ -232,39 +212,26 @@
     <!-- ./wrapper -->
 
     <!-- jQuery -->
-    <script src="plugins/jquery/jquery.min.js"></script>
-    <!-- jQuery UI 1.11.4 -->
-    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-    <script>
-      //  $.widget.bridge("uibutton", $.ui.button);
-    </script>
-    <!-- Bootstrap 4 -->
-    <script src="{{ asset('/tampilan-admin/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <!-- ChartJS -->
-    <script src="{{ asset('/tampilan-admin/plugins/chart.js/Chart.min.js') }}"></script>
-    <!-- Sparkline -->
-    <script src="{{ asset('/tampilan-admin/plugins/sparklines/sparkline.js') }}"></script>
-    <!-- JQVMap -->
-    <script src="{{ asset('/tampilan-admin/plugins/jqvmap/jquery.vmap.min.js') }}"></script>
-    <script src="{{ asset('/tampilan-admin/plugins/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
-    <!-- jQuery Knob Chart -->
-    <script src="{{ asset('/tampilan-admin/plugins/jquery-knob/jquery.knob.min.js') }}"></script>
-    <!-- daterangepicker -->
-    <script src="{{ asset('/tampilan-admin/plugins/moment/moment.min.js') }}"></script>
-    <script src="{{ asset('/tampilan-admin/plugins/daterangepicker/daterangepicker.js') }}"></script>
-    <!-- Tempusdominus Bootstrap 4 -->
-    <script src="{{ asset('/tampilan-admin/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
-    <!-- Summernote -->
-    <script src="{{ asset('/tampilan-admin/plugins/summernote/summernote-bs4.min.js') }}"></script>
-    <!-- overlayScrollbars -->
-    <script src="{{ asset('/tampilan-admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
-    <!-- AdminLTE App -->
-    <script src="{{ asset('/tampilan-admin/dist/js/adminlte.js') }}"></script>
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="{{ asset('/tampilan-admin/dist/js/pages/dashboard.js') }}"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="{{ asset('/tampilan-admin/dist/js/demo.js') }}"></script>
+<script src="{{asset('/tampilan-admin/plugins/jquery/jquery.min.js')}}"></script>
+<!-- Bootstrap 4 -->
+<script src="{{asset('/tampilan-admin/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<!-- AdminLTE App -->
+<script src="{{asset('/tampilan-admin/dist/js/adminlte.min.js')}}"></script>
+<script src="{{asset('tampilan-admin/plugins/datatables/jquery.dataTables.js') }}"></script>
+<script src="{{asset('tampilan-admin/plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
+<script>
+  $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+    });
+  });
+</script>
     @include('sweet::alert')
   </body>
 </html>
