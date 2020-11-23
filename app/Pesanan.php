@@ -19,6 +19,18 @@ class Pesanan extends Model
 
     public function pelanggan()
     {
-        return $this->belongsTo('App\pelanggan', 'id_pelanggan', 'id_pesanan');
+        return $this->belongsTo('App\pelanggan', 'id_pelanggan', 'id_pelanggan');
+    }
+
+    public function layanan()
+    {
+        return $this->belongsTo('App\layanan', 'id_layanan', 'id_layanan');
+    }
+
+    public function getCreatedAtAttribute()
+    {
+        \Carbon\Carbon::setLocale('id');
+    return \Carbon\Carbon::parse($this->attributes['created_at'])
+       ->translatedFormat('l, d F Y H:i');
     }
 }

@@ -105,7 +105,7 @@
               <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                <li class="nav-item has-treeview">
-              <a href="./index.html" class="nav-link ">
+              <a href="{{ url('/mitra/index') }}" class="nav-link ">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>Dashboard</p>
               </a>
@@ -114,13 +114,13 @@
 
             <li class="nav-header">MASTER DATA</li>
               <li class="nav-item">
-                <a href="{{ (url('/mitra/layanan/index')) }}" class="nav-link active">
+                <a href="{{ url('/mitra/layanan/index') }}" class="nav-link active">
                   <i class="nav-icon fas fa-book"></i>
                   <p>Data Layanan</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/profile.html" class="nav-link">
+                <a href="{{ url('/mitra/pesanan/index') }}" class="nav-link">
                   <i class="nav-icon fas fa-book"></i>
                   <p>Data Pesanan</p>
                 </a>

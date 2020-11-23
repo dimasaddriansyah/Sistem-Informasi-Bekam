@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 
 class MitraController extends Controller
 {
+
+
     public function index()
     {
         $mitra = Mitra::get();
@@ -29,6 +31,7 @@ class MitraController extends Controller
         $layanan->deskripsi = ucwords($request->deskripsi);
         $layanan->harga = $request->harga;
         $layanan->pilihan = $request->pilihan;
+
         $layanan->save();
 
         alert()->success('Data layanan Berhasil Ditambahkan', 'Success');
@@ -38,7 +41,7 @@ class MitraController extends Controller
     public function showEdit($id_layanan){
         $layanan = Layanan::where('id_layanan', $id_layanan)->first();
 
-        return view('/mitra/admin/edit', compact('layanan'));
+        return view('/mitra/layanan/edit', compact('layanan'));
     }
 
     public function edit(Request $request,$id_layanan)
@@ -62,3 +65,4 @@ class MitraController extends Controller
     }
 
 }
+

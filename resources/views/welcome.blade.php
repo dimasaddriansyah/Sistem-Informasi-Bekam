@@ -164,20 +164,47 @@
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
       <div class="container">
-
-
-
           <h2>Galeri</h2>
-
           <tbody>
-
 		  </tbody>
-
+      </div>
+    </section>
 
                 {{-- <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p> --}}
 
 
-
+    <!-- Mitra Section -->
+    <section class="content">
+        <div class="container">
+            <div class="section-title">
+                <h2>Mitra Pengobatan Alternatif</h2>
+            </div>
+            <div class="row">
+                @foreach($mitra as $mitra)
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">CV Maher Purwa Jaya</h5>
+                        <p class="card-text">
+                            <table>
+                                <tr>
+                                    <td>No Hp</td>
+                                    <td>:</td>
+                                    <td>0987654321</td>
+                                </tr>
+                                <tr>
+                                    <td>Alamat</td>
+                                    <td>:</td>
+                                    <td>Indramayu</td>
+                                </tr>
+                            </table>
+                        </p>
+                        <a href="#" class="btn btn-primary">Hubungi</a>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
 
 
     <!-- ======= Team Section ======= -->

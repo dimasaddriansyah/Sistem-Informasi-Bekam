@@ -18,11 +18,11 @@ class Authenticate extends Middleware
   {
     if (Auth::guard('superadmin')->check()) {
 
-      return redirect('/superadmin');
+      return redirect('/superadmin/index');
 
     } else if (Auth::guard('mitra')->check()) {
 
-      return redirect('/mitra');
+      return redirect('/mitra/index');
 
     }
   }

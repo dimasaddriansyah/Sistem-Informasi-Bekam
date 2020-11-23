@@ -16,7 +16,7 @@ class Mitra extends Authenticatable
     protected $primaryKey = "id_mitra";
 
     protected $fillable = [
-        'nama', 'email', 'password',
+        'nama', 'email', 'password', 'no_hp', 'alamat', 'api_token',
     ];
 
     /**
@@ -25,6 +25,6 @@ class Mitra extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', 'api_token'
     ];
 }

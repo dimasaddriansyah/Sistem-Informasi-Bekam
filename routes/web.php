@@ -22,12 +22,12 @@ Route::get('/', function () {
     Route::get('superadmin/index', 'SuperAdminController@index')->middleware('auth:superadmin');
 
     //CRUD Mitra
-    Route::get('superadmin/mitra/index', 'MitraController@index');
-    Route::get('superadmin/mitra/create', 'MitraController@showCreate');
-    Route::post('createPost', 'MitraController@create');
-    Route::get('superadmin/mitra/edit/{id_superadmin}', 'MitraController@showEdit');
-    Route::post('editPost/{id_superadmin}', 'MitraController@edit');
-    Route::get('deleteSuperAdmin/{id_superadmin}', 'MitraController@delete');
+    Route::get('superadmin/mitra/index', 'SuperAdminController@show');
+    Route::get('superadmin/mitra/create', 'SuperAdminController@showCreate');
+    Route::post('createPostMitra', 'SuperAdminController@create');
+    Route::get('superadmin/mitra/edit/{id_mitra}', 'SuperAdminController@showEdit');
+    Route::post('editPostMitra/{id_mitra}', 'SuperAdminController@edit');
+    Route::get('deleteMitra/{id_mitra}', 'SuperAdminController@delete');
 
 //Mitra
     Route::get('mitra/index', 'MitraController@index')->middleware('auth:mitra');
@@ -42,6 +42,8 @@ Route::get('/', function () {
 
     //CRUD Pesanan
     Route::get('mitra/pesanan/index', 'PesananController@index');
+    Route::get('mitra/pesanan/edit/{id_pesanan}', 'PesananController@showEdit');
+    Route::post('editPostPesanan/{id_pesanan}', 'PesananController@edit');
 
 //login
     Route::get('login', 'LoginController@index')->middleware('guest');

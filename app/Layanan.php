@@ -11,4 +11,9 @@ class Layanan extends Model
     protected $fillable = [
         'nama', 'deskripsi', 'harga', 'pilihan',
     ];
+
+    public function pesanan()
+    {
+        return $this->hasMany('App\pesanan', 'id_pesanan', 'id_layanan'); //model,namafield,primarykey tabel tujuan
+    }
 }
