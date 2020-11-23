@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'WelcomeController@home');
 
 //superadmin
     Route::get('superadmin/index', 'SuperAdminController@index')->middleware('auth:superadmin');

@@ -67,6 +67,7 @@
 
           {{-- <li><a href="#services">S</a></li> --}}
           <li><a href="#portfolio">Galeri</a></li>
+          <li><a href="#mitra">Mitra</a></li>
           <li><a href="#team">Terapis</a></li>
           <!--<li class="drop-down">
               <a href="">Daftar</a>
@@ -162,7 +163,7 @@
 
 
     <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
+    <section id="mitra" class="portfolio">
       <div class="container">
           <h2>Galeri</h2>
           <tbody>
@@ -179,22 +180,22 @@
             <div class="section-title">
                 <h2>Mitra Pengobatan Alternatif</h2>
             </div>
-            <div class="row">
+            <div class="row ">
                 @foreach($mitra as $mitra)
-                <div class="card">
+                <div class="card mr-5">
                     <div class="card-body">
-                        <h5 class="card-title">CV Maher Purwa Jaya</h5>
+                        <h5 class="card-title">{{ $mitra->nama }}</h5>
                         <p class="card-text">
                             <table>
                                 <tr>
-                                    <td>No Hp</td>
-                                    <td>:</td>
-                                    <td>0987654321</td>
-                                </tr>
-                                <tr>
                                     <td>Alamat</td>
                                     <td>:</td>
-                                    <td>Indramayu</td>
+                                    <td>{{ $mitra->alamat }}</td>
+                                </tr>
+                                <tr>
+                                    <td>No Hp</td>
+                                    <td>:</td>
+                                    <td>{{ $mitra->no_hp }}</td>
                                 </tr>
                             </table>
                         </p>

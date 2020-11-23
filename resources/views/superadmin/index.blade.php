@@ -221,9 +221,9 @@
                 <!-- small box -->
                 <div class="small-box bg-warning">
                   <div class="inner">
-                    <h3>1</h3>
+                    <h3>{{ $mitra->count() }}</h3>
 
-                    <p>User Registrations</p>
+                    <p>Data Mitra</p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-person-add"></i>
