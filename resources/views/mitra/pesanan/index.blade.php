@@ -159,7 +159,7 @@
                                         <th>No</th>
                                         <th><center>Nama Pelanggan</center></th>
                                         <th><center>Nama Layanan</center></th>
-                                        <th>Bukti Pemabayaran</th>
+                                        <th>Bukti Pembayaran</th>
                                         <th>Tanggal Pembayaran</th>
                                         <th>Status</th>
                                         <th><center>Option</center> </th>
@@ -172,7 +172,7 @@
                                             <td>{{$pesanan->pelanggan->nama}}</td>
                                             <td>{{$pesanan->layanan->nama}}</td>
                                             <td>
-                                                <img src="" alt="">
+                                                <a href=""><img src="{{ asset('uploads/'.$pesanan->bukti_pembayaran) }}" width="350px" height="350px"></a>
                                             </td>
                                             <td>{{$pesanan->created_at}}</td>
                                             <td>

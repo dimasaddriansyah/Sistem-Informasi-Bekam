@@ -153,7 +153,7 @@
               <div class="col-md-12">
                 <div class="row">
                   <div class="col">
-                    <a href="{{url('/mitra/layanan/create')}}" class="btn btn-primary"><i class="fa fa-plus p-r-5"></i> Tambah Barang</a>
+                    <a href="{{url('/mitra/layanan/create')}}" class="btn btn-primary"><i class="fa fa-plus p-r-5"></i> Tambah Layanan</a>
                   </div>
                 </div></div>
                 <div class="col-12 mt-3">

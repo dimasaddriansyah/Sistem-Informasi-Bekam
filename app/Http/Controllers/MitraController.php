@@ -6,6 +6,7 @@ use App\Layanan;
 use App\Mitra;
 use App\Pesanan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MitraController extends Controller
 {
@@ -13,8 +14,8 @@ class MitraController extends Controller
 
     public function index()
     {
-        $mitra = Mitra::get();
-        $layanan = Layanan::get();
+        $mitra = Mitra::where('id_mitra', Auth::guard('mitra')->user()->id_mitra)->get();
+        $layanan = Layanan::where('id_mitra', Auth::guard('mitra')->user()->id_mitra)->get();
         $pesanan = Pesanan::get();
         return view('mitra.index', compact('mitra', 'layanan', 'pesanan'));
     }

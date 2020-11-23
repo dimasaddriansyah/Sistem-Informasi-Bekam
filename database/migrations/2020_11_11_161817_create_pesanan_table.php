@@ -19,6 +19,7 @@ class CreatePesananTable extends Migration
             $table->integer('id_layanan')->unsigned();
             $table->string('bukti_pembayaran');
             $table->dateTime('tanggal');
+            $table->integer('status');
             $table->timestamps();
 
             $table->foreign('id_pelanggan')->references('id_pelanggan')->on('pelanggan');

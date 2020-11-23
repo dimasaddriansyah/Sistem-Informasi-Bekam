@@ -13,5 +13,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(MitraSeeder::class);
         $this->call(SuperAdminSeeder::class);
+        $this->call(PelangganSeeder::class);
     }
 }

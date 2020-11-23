@@ -75,4 +75,20 @@ class SuperAdminController extends Controller
         alert()->success('Data Layanan Terhapus !', 'Deleted');
         return redirect('/superadmin/mitra/index');
     }
+
+    public function showLayanan()
+    {
+        $mitra = Mitra::get();
+        $layanan = Layanan::get();
+        $pesanan = Pesanan::get();
+        return view('superadmin.layanan.index', compact('mitra', 'layanan', 'pesanan'));
+    }
+
+    public function showPesanan()
+    {
+        $mitra = Mitra::get();
+        $layanan = Layanan::get();
+        $pesanan = Pesanan::get();
+        return view('superadmin.pesanan.index', compact('mitra', 'layanan', 'pesanan'));
+    }
 }

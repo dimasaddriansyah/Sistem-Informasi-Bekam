@@ -121,7 +121,7 @@
 
             <li class="nav-header">MASTER DATA</li>
               <li class="nav-item">
-                <a href="{{ (url('/superadmin/mitra/index')) }}" class="nav-link active">
+                <a href="{{ (url('/superadmin/mitra/index')) }}" class="nav-link ">
                   <i class="nav-icon fas fa-book"></i>
                   <p>Data Mitra</p>
                 </a>
@@ -133,7 +133,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ (url('/superadmin/pesanan/index')) }}" class="nav-link">
+                <a href="{{ (url('/superadmin/pesanan/index')) }}" class="nav-link active">
                   <i class="nav-icon fas fa-book"></i>
                   <p>Data Pesanan</p>
                 </a>
@@ -156,12 +156,6 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row">
-              <div class="col-md-12">
-                <div class="row">
-                  <div class="col">
-                    <a href="{{url('/superadmin/mitra/create')}}" class="btn btn-primary"><i class="fa fa-plus p-r-5"></i> Tambah Mitra</a>
-                  </div>
-                </div></div>
                 <div class="col-12 mt-3">
                     <div class="card">
                         <div class="card-body">
@@ -169,30 +163,33 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
+                                        <th><center>Nama Layanan</center></th>
                                         <th><center>Nama Mitra</center></th>
-                                        <th>Email</th>
-                                        <th>No Hp</th>
-                                        <th>Alamat</th>
-                                        <th><center>Option</center> </th>
+                                        <th><center>Nama Pelanggan</center></th>
+                                        <th>Bukti Pembayaran</th>
+                                        <th>Tanggal</th>
+                                        <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($mitra as $key => $mitra)
+                                    @foreach($pesanan as $key => $pesanan)
                                         <tr>
                                             <td>{{$key+1}}</td>
-                                            <td>{{$mitra->nama}}</td>
-                                            <td>{{$mitra->email}}</td>
-                                            <td>{{ $mitra->no_hp }}</td>
-                                            <td>{{$mitra->alamat}}</td>
+                                            <td>{{$pesanan->layanan->nama}}</td>
+                                            <td>{{$pesanan->mitra->nama}}</td>
+                                            <td>{{$pesanan->pelanggan->nama}}</td>
+                                            <td>{{$pesanan->nukti_pembayaran}}</td>
+                                            <td>{{ $pesanan->tanggal }}</td>
                                             <td>
                                                 <center>
-                                                <a href="{{url('/superadmin/mitra/edit/'.$mitra->id_mitra)}}" class="btn btn-xs btn-warning btn-flat"><i class="fa fa-edit"></i></a>
-                                                <a href="{{url('deleteMitra/'.$mitra->id_mitra)}}" class="btn btn-xs btn-danger btn-flat" onclick="
-                                                  return confirm('Anda Yakin Akan Menghapus Mitra ?');"><i class="fa fa-trash"></i></a>
+                                                    @if($pesanan->status == 1)
+                                                      <span class="badge badge-success">Telah Dikonfirmasi</span></a>
+                                                    @else
+                                                      <span class="badge badge-danger">Belum Dikonfirmasi</span></a>
+                                                    @endif
                                                 </center>
                                             </td>
                                         </tr>
-
                                     @endforeach
                                 </tbody>
                             </table>

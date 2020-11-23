@@ -27,4 +27,14 @@ class Mitra extends Authenticatable
     protected $hidden = [
         'password', 'remember_token', 'api_token'
     ];
+
+    public function layanan()
+    {
+        return $this->hasMany('App\layanan', 'id_layanan', 'id_mitra'); //model,namafield,primarykey tabel tujuan
+    }
+
+    public function pesanan()
+    {
+        return $this->hasMany('App\pesanan', 'id_pesanan', 'id_mitra'); //model,namafield,primarykey tabel tujuan
+    }
 }

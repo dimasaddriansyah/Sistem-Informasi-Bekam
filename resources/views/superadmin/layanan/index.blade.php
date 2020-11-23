@@ -121,13 +121,13 @@
 
             <li class="nav-header">MASTER DATA</li>
               <li class="nav-item">
-                <a href="{{ (url('/superadmin/mitra/index')) }}" class="nav-link active">
+                <a href="{{ (url('/superadmin/mitra/index')) }}" class="nav-link ">
                   <i class="nav-icon fas fa-book"></i>
                   <p>Data Mitra</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ (url('/superadmin/layanan/index')) }}" class="nav-link">
+                <a href="{{ (url('/superadmin/layanan/index')) }}" class="nav-link active">
                   <i class="nav-icon fas fa-book"></i>
                   <p>Data Layanan</p>
                 </a>
@@ -156,12 +156,6 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row">
-              <div class="col-md-12">
-                <div class="row">
-                  <div class="col">
-                    <a href="{{url('/superadmin/mitra/create')}}" class="btn btn-primary"><i class="fa fa-plus p-r-5"></i> Tambah Mitra</a>
-                  </div>
-                </div></div>
                 <div class="col-12 mt-3">
                     <div class="card">
                         <div class="card-body">
@@ -169,28 +163,22 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th><center>Nama Mitra</center></th>
-                                        <th>Email</th>
-                                        <th>No Hp</th>
-                                        <th>Alamat</th>
-                                        <th><center>Option</center> </th>
+                                        <th><center>Nama Layanan</center></th>
+                                        <th>Nama Mitra</th>
+                                        <th>Deskripsi</th>
+                                        <th>Harga</th>
+                                        <th>Pilihan</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($mitra as $key => $mitra)
+                                    @foreach($layanan as $key => $layanan)
                                         <tr>
                                             <td>{{$key+1}}</td>
-                                            <td>{{$mitra->nama}}</td>
-                                            <td>{{$mitra->email}}</td>
-                                            <td>{{ $mitra->no_hp }}</td>
-                                            <td>{{$mitra->alamat}}</td>
-                                            <td>
-                                                <center>
-                                                <a href="{{url('/superadmin/mitra/edit/'.$mitra->id_mitra)}}" class="btn btn-xs btn-warning btn-flat"><i class="fa fa-edit"></i></a>
-                                                <a href="{{url('deleteMitra/'.$mitra->id_mitra)}}" class="btn btn-xs btn-danger btn-flat" onclick="
-                                                  return confirm('Anda Yakin Akan Menghapus Mitra ?');"><i class="fa fa-trash"></i></a>
-                                                </center>
-                                            </td>
+                                            <td>{{$layanan->nama}}</td>
+                                            <td>{{$layanan->mitra->nama}}</td>
+                                            <td>{{$layanan->deskripsi}}</td>
+                                            <td>{{ $layanan->harga }}</td>
+                                            <td>{{$layanan->pilihan}}</td>
                                         </tr>
 
                                     @endforeach

@@ -15,11 +15,15 @@ class CreateLayananTable extends Migration
     {
         Schema::create('layanan', function (Blueprint $table) {
             $table->increments('id_layanan');
+            $table->integer('id_mitra')->unsigned();
             $table->string('nama');
             $table->string('deskripsi');
             $table->integer('harga');
             $table->string('pilihan');
             $table->timestamps();
+
+            $table->foreign('id_mitra')->references('id_mitra')->on('mitra');
+
         });
     }
 

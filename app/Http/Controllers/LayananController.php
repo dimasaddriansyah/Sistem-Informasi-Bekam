@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Layanan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use UxWeb\SweetAlert\SweetAlert;
 
 class LayananController extends Controller
 {
     public function index()
     {
-        $layanan = Layanan::all();
+        $layanan = Layanan::where('id_mitra', Auth::guard('mitra')->user()->id_mitra)->get();
         return view('mitra.layanan.index', compact('layanan'));
     }
 
@@ -26,6 +27,8 @@ class LayananController extends Controller
         $layanan->deskripsi = ucwords($request->deskripsi);
         $layanan->harga = $request->harga;
         $layanan->pilihan = $request->pilihan;
+        $layanan->id_mitra = Auth::guard('mitra')->user()->id_mitra;
+
         $layanan->save();
 
         alert()->success('Data layanan Berhasil Ditambahkan', 'Success');

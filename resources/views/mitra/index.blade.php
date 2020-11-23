@@ -147,7 +147,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/profile.html" class="nav-link">
+                <a href="{{ (url('/mitra/pesanan/index')) }}" class="nav-link">
                   <i class="nav-icon fas fa-book"></i>
                   <p>Data Pesanan</p>
                 </a>

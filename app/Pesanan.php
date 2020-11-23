@@ -27,6 +27,11 @@ class Pesanan extends Model
         return $this->belongsTo('App\layanan', 'id_layanan', 'id_layanan');
     }
 
+    public function mitra()
+    {
+        return $this->belongsTo('App\mitra', 'id_mitra', 'id_mitra');
+    }
+
     public function getCreatedAtAttribute()
     {
         \Carbon\Carbon::setLocale('id');

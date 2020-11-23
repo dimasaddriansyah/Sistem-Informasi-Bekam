@@ -119,6 +119,18 @@
                   <p>Data Mitra</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{ (url('/superadmin/layanan/index')) }}" class="nav-link">
+                  <i class="nav-icon fas fa-book"></i>
+                  <p>Data Layanan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ (url('/superadmin/pesanan/index')) }}" class="nav-link">
+                  <i class="nav-icon fas fa-book"></i>
+                  <p>Data Pesanan</p>
+                </a>
+              </li>
               </ul>
             </li>
             </ul>

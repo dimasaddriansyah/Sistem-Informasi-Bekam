@@ -203,14 +203,21 @@
                           disabled/>
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Bukti Pembayaran</label>
-                        <img src="" alt="">
+                        <label for="exampleInputEmail1">Bukti Pembayaran</label><br>
+                        <a href=""><img src="{{ asset('uploads/'.$pesanan->bukti_pembayaran) }}" width="200px" height="200px"></a>
+
                       </div>
                     <!-- /.card-body -->
                     <div class="card-footer">
+                      @if($pesanan->status == 0)
                       <button class="btn btn-primary">
                         Terima Pesanan
                       </button>
+                      @else
+                      <button class="btn btn-primary" disabled>
+                        Pesanan Telah Diterima
+                      </button>
+                      @endif
                     </div>
                   </form>
                 </div>
