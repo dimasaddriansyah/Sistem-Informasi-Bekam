@@ -66,9 +66,10 @@
 
 
           {{-- <li><a href="#services">S</a></li> --}}
-          <li><a href="#portfolio">Galeri</a></li>
+          <li><a href="#manfaat">Manfaat</a></li>
+          <li><a href="#gallery">Galeri</a></li>
           <li><a href="#mitra">Mitra</a></li>
-          <li><a href="#team">Terapis</a></li>
+
           <!--<li class="drop-down">
               <a href="">Daftar</a>
           </li>-->
@@ -157,34 +158,72 @@
       </div>
     </section><!-- End About Section -->
 
+    <!-- Manfaat Section -->
+    <section class="content" id="manfaat">
+        <div class="container">
+            <div class="section-title">
+                <h2>Manfaat Pengobatan Alternatif</h2>
+            </div>
+            <div class="row ">
+                <div class="col-md-6">
+                    <img src="tampilan-home/galeri/undraw_a_whole_year_vnfm.png" class="img-fluid">
+                </div>
+                <div class="col-md-6  align-self-center">
+                    <h3 class="col mt-xl-5">Menyembuhkan Sakit Kepala</h3>
+                    <p class="col mt-3" style="line-height: 200%">Untuk kamu yang sering mengalami sakit kepala dan migrain, tidak ada salahnya mencoba bekam. Adapun titik-titik terbaik untuk menyembuhkan keluhan ini adalah di leher dan kepala.</p>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-md-6 align-self-center">
+                    <h3 class="col mt-xl-5">Menurunkan Berat Badan</h3>
+                    <p class="col mt-3" style="line-height: 200%">Tidak cuma darah yang bisa dinormalkan dengan bekam, jaringan lemak juga bisa disedot dari pori-pori tubuh lewat bekam. Adapun target pembekaman adalah titik-titik yang banyak jaringan lemaknya.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="tampilan-home/galeri/undraw_Meditation_o89g.png" class="img-fluid">
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-md-6 ">
+                    <img src="tampilan-home/galeri/undraw_Jogging_t14q.png" class="img-fluid">
+                </div>
+                <div class="col-md-6 align-self-center">
+                    <h3 class="col mt-xl-5">Menyembuhkan Darah Tinggi</h3>
+                    <p class="col mt-3" style="line-height: 200%">Tekanan darah tinggi menyebabkan komplikasi, seperti penyakit jantung, ginjal dan diabetes. Untuk menanganinya, kamu bisa melakukan bekam di titik-titik khusus, seperti bahu, kepala dan badan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 
 
 
     <!-- ======= Portfolio Section ======= -->
-    <section id="mitra" class="portfolio">
-      <div class="container">
-          <h2>Galeri</h2>
-          <tbody>
-		  </tbody>
-      </div>
+    <section class="content" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Galerry</h2>
+            </div>
+            <div class="row ">
+
+            </div>
+        </div>
     </section>
 
                 {{-- <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p> --}}
 
 
     <!-- Mitra Section -->
-    <section class="content">
+    <section class="content" id="mitra">
         <div class="container">
             <div class="section-title">
                 <h2>Mitra Pengobatan Alternatif</h2>
             </div>
             <div class="row ">
                 @foreach($mitra as $mitra)
-                <div class="card mr-5">
+                <div class="card mr-5 rounded">
                     <div class="card-body">
-                        <h5 class="card-title">{{ $mitra->nama }}</h5>
+                        <h5 class="card-title" style="font-weight: 700">{{ $mitra->nama }}</h5>
                         <p class="card-text">
                             <table>
                                 <tr>
@@ -206,51 +245,6 @@
             </div>
         </div>
     </section>
-
-
-    <!-- ======= Team Section ======= -->
-    <section id="team" class="team">
-      <div class="container">
-        <div class="section-title">
-            <h2>Terapis Pengobatan Alternatif</h2>
-            <h5>Terapis dari beberapa Mitra kami</h5>
-        </div>
-        <div class="row">
-            <div class="col-lg-6 mt-4">
-                <div class="member d-flex">
-                <div class="pic"><img src="assets/img/team/" class="img-fluid" alt=""></div>
-                <div class="member-info">
-                    <h4>Muhammad Amin Mughni</h4>
-                    <span>Terapis Purwa Jaya</span>
-                </div>
-                </div>
-            </div>
-            <div class="col-lg-6 mt-4">
-                <div class="member d-flex">
-                <div class="pic"><img src="assets/img/team/" class="img-fluid" alt=""></div>
-                <div class="member-info">
-                    <h4>Syamsuri</h4>
-                    <span>Terapis Purwa Jaya</span>
-                </div>
-                </div>
-            </div>
-            <div class="col-lg-6 mt-4">
-                <div class="member d-flex">
-                <div class="pic"><img src="assets/img/team/" class="img-fluid" alt=""></div>
-                <div class="member-info">
-                    <h4>Nashori</h4>
-                    <span>Terapis Purwa Jaya</span>
-                </div>
-                </div>
-            </div>
-        </div>
-      </div>
-    </section><!-- End Team Section -->
-
-
-
-
-
 
       {{-- <div class="map">
         <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
