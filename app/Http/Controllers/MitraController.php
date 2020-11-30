@@ -17,7 +17,8 @@ class MitraController extends Controller
         $mitra = Mitra::where('id_mitra', Auth::guard('mitra')->user()->id_mitra)->get();
         $layanan = Layanan::where('id_mitra', Auth::guard('mitra')->user()->id_mitra)->get();
         $pesanan = Pesanan::get();
-        return view('mitra.index', compact('mitra', 'layanan', 'pesanan'));
+        $pesananbelum = Pesanan::where('status',0)->get();
+        return view('mitra.index', compact('mitra', 'layanan', 'pesanan', 'pesananbelum'));
     }
 
     public function showCreate()

@@ -141,7 +141,7 @@
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-6">
-                <h1>Edit Pesanan</h1>
+                <a href="{{ url('/mitra/pesanan/index') }}" class="btn btn-primary"><i class="fas fa-arrow-left"> Kembali</i></a>
               </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -204,7 +204,9 @@
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Bukti Pembayaran</label><br>
-                        <a href=""><img src="{{ asset('uploads/'.$pesanan->bukti_pembayaran) }}" width="200px" height="200px"></a>
+                        <button type="button" data-toggle="modal" data-target="#modalFoto{{ $pesanan->id_pesanan }}">
+                            <img src="{{ asset('uploads/'.$pesanan->bukti_pembayaran) }}" alt="" height="200px" weight="200ox">
+                        </button>
 
                       </div>
                     <!-- /.card-body -->
@@ -240,6 +242,15 @@
     </div>
     <!-- ./wrapper -->
 
+    <div class="modal fade" id="modalFoto{{ $pesanan->id_pesanan }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-body">
+                <center>
+                    <img src="{{ asset('uploads/'.$pesanan->bukti_pembayaran) }}" alt="" height="500px" width="500px">
+              </center>
+            </div>
+        </div>
+    </div>
     <!-- jQuery -->
     <script src="/tampilan-admin/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
