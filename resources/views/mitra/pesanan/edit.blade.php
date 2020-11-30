@@ -213,10 +213,6 @@
                       <button class="btn btn-primary">
                         Terima Pesanan
                       </button>
-                      @else
-                      <button class="btn btn-primary" disabled>
-                        Pesanan Telah Diterima
-                      </button>
                       @endif
                     </div>
                   </form>

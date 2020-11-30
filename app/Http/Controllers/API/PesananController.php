@@ -43,6 +43,7 @@ class PesananController extends Controller
             [
                 'bukti_pembayaran'  => 'required|mimes:png,jpg',
 
+
             ],
             [
                 'bukti_pembayaran.required' => 'Harus Mengisi Bagian Bukti Pembayaran !',
@@ -53,7 +54,8 @@ class PesananController extends Controller
             'id_pelanggan'        => $request->id_pelanggan,
             'id_layanan'          => $request->id_layanan,
             'bukti_pembayaran'    => $request->bukti_pembayaran,
-            'tanggal'             => $request->tanggal
+            'tanggal'             => $request->tanggal,
+            'status'              => 0,
         ]);
 
         $response = fractal()
@@ -77,6 +79,7 @@ class PesananController extends Controller
             $pesanan->id_layanan = $request->id_layanan ? $request->id_layanan : $pesanan->id_layanan;
             $pesanan->bukti_pembayaran = $request->bukti_pembayaran ? $request->bukti_pembayaran : $pesanan->bukti_pembayaran;
             $pesanan->tanggal = $request->tanggal ? $request->tanggal : $pesanan->tanggal;
+            $pesanan->status = $request->status ? $request->status : $pesanan->status;
             $pesanan->save();
 
             $response = fractal()

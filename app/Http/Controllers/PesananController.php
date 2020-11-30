@@ -27,7 +27,7 @@ class PesananController extends Controller
 
         $pesanan->save();
 
-        alert()->success('Data Pesanan Berhasil Ditambahkan', 'Success');
+        alert()->success('Data Pesanan Berhasil Dikonfirmasi', 'Success');
         return redirect('/mitra/pesanan/index');
     }
 
