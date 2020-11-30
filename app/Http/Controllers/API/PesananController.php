@@ -99,6 +99,31 @@ class PesananController extends Controller
         ], 400);
     }
 
+    public function batal(Request $request, $id_pesanan)
+    {
+        $pesanan = Pesanan::where('id_pesanan', $id_pesanan)->first();
+
+        if ($pesanan) {
+            $pesanan->status = 0;
+            $pesanan->save();
+
+            $response = fractal()
+                ->item($pesanan)
+                ->transformWith(new PesananTransformer)
+                ->toArray();
+
+            return response()->json([
+                "message" => "Data Pesanan Id " . $id_pesanan . " Dibatalkan",
+                $response
+
+            ]);
+        }
+
+        return response()->json([
+            "message" => "PUT Method With Id " . $id_pesanan . " Not Found",
+        ], 400);
+    }
+
     public function delete(Pesanan $pesanan, $id_pesanan)
     {
         $pesanan = Pesanan::where('id_pesanan', $id_pesanan)->first();

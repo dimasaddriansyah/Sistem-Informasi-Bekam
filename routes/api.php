@@ -28,6 +28,7 @@ Route::get('pesanan/index', 'API\PesananController@index');                     
 Route::post('pesanan/create', 'API\PesananController@add');                     // Proses Tambah Data Pesanan
 Route::get('pesanan/{id_pesanan}', 'API\PesananController@indexById');          // Menampilkan Data Pesanan Sesuai ID
 Route::put('pesanan/{id_pesanan}', 'API\PesananController@update');             // Peoses Edit data Pesanan sesuai ID
+Route::put('pesanan/{id_pesanan}/batal', 'API\PesananController@batal');             // Peoses Edit data Pesanan sesuai ID
 Route::delete('pesanan/{id_pesanan}', 'API\PesananController@delete');          // Hapus Data Pesanan seusia ID
 
 //Mitra
