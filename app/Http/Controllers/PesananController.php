@@ -54,13 +54,12 @@ class PesananController extends Controller
         $tujuan_upload = 'uploads';
         $file -> move($tujuan_upload,$nama_file);
 
-        $tanggal = Carbon::now();
 
         $pesanan = new Pesanan();
         $pesanan->id_pelanggan = $request->id_pelanggan;
         $pesanan->id_layanan = $request->id_layanan;
         $pesanan->bukti_pembayaran = $nama_file;
-        $pesanan->tanggal = $tanggal;
+        $pesanan->tanggal = $request->tanggal;
         $pesanan->status = 0;
 
         $pesanan->save();

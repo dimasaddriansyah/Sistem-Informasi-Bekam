@@ -221,7 +221,7 @@
             </div>
             <div class="row ">
                 @foreach($mitra as $mitra)
-                <div class="card mr-5 rounded">
+                <div class="card mr-4 rounded">
                     <div class="card-body">
                         <h5 class="card-title" style="font-weight: 700">{{ $mitra->nama }}</h5>
                         <p class="card-text">

@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
+
+use App\Http\Controllers\Controller;
 
 use App\Pelanggan;
 use App\Transformers\PelangganTransformer;
@@ -60,17 +62,5 @@ class PelangganController extends Controller
             ->toArray();
 
         return response()->json($response, 201);
-    }
-
-    public function indexPelanggan(Pelanggan $pelanggan)
-    {
-        $client = new Client();
-        $response = $client->request('GET', 'http://127.0.0.1:8000/api/pelanggan');
-        $statusCode = $response->getStatusCode();
-        $body = $response->getBody()->getContents();
-
-        $data = json_decode($body, true);
-
-        return view('indexPelanggan', compact('data'));
     }
 }

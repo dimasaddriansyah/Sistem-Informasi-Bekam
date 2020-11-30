@@ -172,7 +172,11 @@
                                             <td>{{$pesanan->pelanggan->nama}}</td>
                                             <td>{{$pesanan->layanan->nama}}</td>
                                             <td>
-                                                <a href=""><img src="{{ asset('uploads/'.$pesanan->bukti_pembayaran) }}" width="350px" height="350px"></a>
+                                                <center>
+                                                    <button type="button" data-toggle="modal" data-target="#modalFoto{{ $pesanan->id_pesanan }}" data-id="{{ $pesanan->id_pesanan }}">
+                                                        <img src="{{ asset('uploads/'.$pesanan->bukti_pembayaran) }}" alt="" height="200px" weight="200ox">
+                                                    </button>
+                                                </center>
                                             </td>
                                             <td>{{$pesanan->created_at}}</td>
                                             <td>
@@ -186,8 +190,8 @@
                                               </td>
                                               <td>
                                                 <center>
-                                                    <a href="{{url('/mitra/pesanan/edit/'.$pesanan->id_pesanan)}}" class="btn btn-xs btn-warning btn-flat"><i class="fa fa-edit"></i></a>
-                                                    </center>
+                                                  <a href="{{url('/mitra/pesanan/edit/'.$pesanan->id_pesanan)}}" class="btn btn-xs btn-warning btn-flat"><i class="fa fa-edit"></i></a>
+                                                </center>
                                               </td>
                                         </tr>
 
@@ -214,6 +218,17 @@
       <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
+
+<!-- Modal Foto -->
+<div class="modal fade" id="modalFoto{{ $pesanan->id_pesanan }}" data-id="{{ $pesanan->id_pesanan }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-body">
+            <center>
+                <img src="{{ asset('uploads/'.$pesanan->bukti_pembayaran) }}" alt="" height="500px" width="500px">
+          </center>
+        </div>
+    </div>
+  </div>
 
     <!-- jQuery -->
 <script src="{{asset('/tampilan-admin/plugins/jquery/jquery.min.js')}}"></script>

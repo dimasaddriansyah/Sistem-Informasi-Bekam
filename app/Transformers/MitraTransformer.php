@@ -36,6 +36,8 @@ class MitraTransformer extends TransformerAbstract
             'id_mitra'      => $mitra->id_mitra,
             'nama'          => $mitra->nama,
             'email'         => $mitra->email,
+            'alamat'         => $mitra->alamat,
+            'no_hp'         => $mitra->no_hp,
             'publish'       => $mitra->created_at->diffForHumans(),
         ];
     }

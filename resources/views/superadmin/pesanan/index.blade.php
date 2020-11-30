@@ -164,7 +164,6 @@
                                     <tr>
                                         <th>No</th>
                                         <th><center>Nama Layanan</center></th>
-                                        <th><center>Nama Mitra</center></th>
                                         <th><center>Nama Pelanggan</center></th>
                                         <th>Bukti Pembayaran</th>
                                         <th>Tanggal</th>
@@ -176,9 +175,10 @@
                                         <tr>
                                             <td>{{$key+1}}</td>
                                             <td>{{$pesanan->layanan->nama}}</td>
-                                            <td>{{$pesanan->mitra->nama}}</td>
                                             <td>{{$pesanan->pelanggan->nama}}</td>
-                                            <td>{{$pesanan->nukti_pembayaran}}</td>
+                                            <td>
+                                                <img src="{{ asset('uploads/'.$pesanan->bukti_pembayaran) }}" style="width : 100px;">
+                                            </td>
                                             <td>{{ $pesanan->tanggal }}</td>
                                             <td>
                                                 <center>

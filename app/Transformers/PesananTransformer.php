@@ -34,11 +34,11 @@ class PesananTransformer extends TransformerAbstract
     {
         return [
             'id_pesanan'        => $pesanan->id_pesanan,
-            'id_pelanggan'      => $pesanan->id_pelanggan,
-            'id_layanan'        => $pesanan->id_layanan,
+            'pelanggan'      => $pesanan->pelanggan->nama,
+            'layanan'        => $pesanan->layanan->nama,
             'bukti_pembayaran'  => $pesanan->bukti_pembayaran,
             'tanggal'           => $pesanan->tanggal,
-            'publish'           => $pesanan->created_at->diffForHumans(),
+            'publish'           => $pesanan->created_at,
         ];
     }
 }

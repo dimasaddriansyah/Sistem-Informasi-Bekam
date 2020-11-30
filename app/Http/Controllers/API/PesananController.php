@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
+
+use App\Http\Controllers\Controller;
 
 use App\Pesanan;
 use App\Transformers\PesananTransformer;
@@ -36,19 +38,17 @@ class PesananController extends Controller
 
     public function add(Request $request, Pesanan $pesanan)
     {
-        /*
         $this->validate(
             $request,
             [
-                'bukti_pembayaran'  => 'required|mimes:png,jpg|unique:pesanan',
+                'bukti_pembayaran'  => 'required|mimes:png,jpg',
 
             ],
             [
                 'bukti_pembayaran.required' => 'Harus Mengisi Bagian Bukti Pembayaran !',
-                'bukti_pembayaran.unique' => 'Bukti Pembayaran Sudah Tersedia !',
             ]
         );
-        */
+
         $pesanan = $pesanan->create([
             'id_pelanggan'        => $request->id_pelanggan,
             'id_layanan'          => $request->id_layanan,

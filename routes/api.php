@@ -17,30 +17,30 @@ Route::delete('post/{post}', 'PostController@delete')->middleware('auth:api');
 
 
 //Layanan
-Route::get('layanan/index', 'LayananController@index');                     // Menampilkan semua data layanan
-Route::post('layanan/create', 'LayananController@add');                     // Proses Tambah data Layanan
-Route::get('layanan/{id_layanan}', 'LayananController@indexById');          // Menampikan data layanan sesuai ID
-Route::put('layanan/{id_layanan}', 'LayananController@update');             // Proses Edit data Layanan sesuai ID
-Route::delete('layanan/{id_layanan}', 'LayananController@delete');          // Hapus data layanan sesuai ID
+Route::get('layanan/index', 'API\LayananController@index');                     // Menampilkan semua data layanan
+Route::post('layanan/create', 'API\LayananController@add');                     // Proses Tambah data Layanan
+Route::get('layanan/{id_layanan}', 'API\LayananController@indexById');          // Menampikan data layanan sesuai ID
+Route::put('layanan/{id_layanan}', 'API\LayananController@update');             // Proses Edit data Layanan sesuai ID
+Route::delete('layanan/{id_layanan}', 'API\LayananController@delete');          // Hapus data layanan sesuai ID
 
 //Pesanan
-Route::get('pesanan/index', 'PesananController@index');                     // Menampilkan semua data Pesanan
-Route::post('pesanan/create', 'PesananController@add');                     // Proses Tambah Data Pesanan
-Route::get('pesanan/{id_pesanan}', 'PesananController@indexById');          // Menampilkan Data Pesanan Sesuai ID
-Route::put('pesanan/{id_pesanan}', 'PesananController@update');             // Peoses Edit data Pesanan sesuai ID
-Route::delete('pesanan/{id_pesanan}', 'PesananController@delete');          // Hapus Data Pesanan seusia ID
+Route::get('pesanan/index', 'API\PesananController@index');                     // Menampilkan semua data Pesanan
+Route::post('pesanan/create', 'API\PesananController@add');                     // Proses Tambah Data Pesanan
+Route::get('pesanan/{id_pesanan}', 'API\PesananController@indexById');          // Menampilkan Data Pesanan Sesuai ID
+Route::put('pesanan/{id_pesanan}', 'API\PesananController@update');             // Peoses Edit data Pesanan sesuai ID
+Route::delete('pesanan/{id_pesanan}', 'API\PesananController@delete');          // Hapus Data Pesanan seusia ID
 
 //Mitra
-Route::get('mitra', 'MitraController@mitra');                               // Menampilkan semua data Mitra
-Route::post('registerMitra', 'MitraController@registerMitra');              // Proses register Mitra
+Route::get('mitra', 'API\MitraController@mitra');                               // Menampilkan semua data Mitra
+Route::post('registerMitra', 'API\MitraController@registerMitra');              // Proses register Mitra
 
 //Pelanggan
-Route::get('pelanggan', 'PelangganController@Pelanggan');                   // Menampilkan semua data Pelanggan
-Route::get('pelanggan/{id_pelanggan}', 'PelangganController@PelangganById');// Menampilkan sesuai Id data Pelanggan
-Route::post('registerPelanggan', 'PelangganController@registerPelanggan');  // Proses register Pelanggan
+Route::get('pelanggan', 'API\PelangganController@Pelanggan');                   // Menampilkan semua data Pelanggan
+Route::get('pelanggan/{id_pelanggan}', 'API\PelangganController@PelangganById');// Menampilkan sesuai Id data Pelanggan
+Route::post('registerPelanggan', 'API\PelangganController@registerPelanggan');  // Proses register Pelanggan
 
 //Login
-Route::post('login', 'LoginController@login');                              // Proses Login Pelanggan dan Mitra
+Route::post('login', 'API\LoginController@login');                              // Proses Login Pelanggan dan Mitra
 
 
 
