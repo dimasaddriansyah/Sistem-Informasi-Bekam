@@ -195,7 +195,11 @@
                         <input type="file" class="form-control @error('bukti_pembayaran') is-invalid @enderror" name="bukti_pembayaran" value="{{ old('bukti_pembayaran') }}">
 
                       </div>
-                      <label for="exampleInputEmail1">Pilih Layanan</label>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Tanggal Pesan</label>
+                        <input type="datetime-local" class="form-control @error('tanggal') is-invalid @enderror" name="tanggal" value="{{ old('tanggal') }}">
+
+                      </div>
                     <!-- /.card-body -->
                     <div class="card-footer">
                       <button class="btn btn-primary">

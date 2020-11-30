@@ -153,7 +153,7 @@
                 <div class="col-12 mt-3">
                     <div class="card">
                         <div class="card-body">
-                          <table id="example1" class="table table-bordered table-striped table-responsive-md">
+                          <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
                                         <th>No</th>
@@ -173,12 +173,12 @@
                                             <td>{{$pesanan->layanan->nama}}</td>
                                             <td>
                                                 <center>
-                                                    <button type="button" data-toggle="modal" data-target="#modalFoto{{ $pesanan->id_pesanan }}" data-id="{{ $pesanan->id_pesanan }}">
+                                                    <button type="button" data-toggle="modal" data-target="#modalFoto{{ $pesanan->id_pesanan }}">
                                                         <img src="{{ asset('uploads/'.$pesanan->bukti_pembayaran) }}" alt="" height="200px" weight="200ox">
                                                     </button>
                                                 </center>
                                             </td>
-                                            <td>{{$pesanan->created_at}}</td>
+                                            <td>{{$pesanan->tanggal}}</td>
                                             <td>
                                                 <center>
                                                 @if($pesanan->status == 1)
@@ -220,7 +220,7 @@
     <!-- ./wrapper -->
 
 <!-- Modal Foto -->
-<div class="modal fade" id="modalFoto{{ $pesanan->id_pesanan }}" data-id="{{ $pesanan->id_pesanan }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="modalFoto{{ $pesanan->id_pesanan }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-body">
             <center>

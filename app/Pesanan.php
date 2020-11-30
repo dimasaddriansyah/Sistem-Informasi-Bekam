@@ -38,4 +38,11 @@ class Pesanan extends Model
     return \Carbon\Carbon::parse($this->attributes['created_at'])
        ->translatedFormat('l, d F Y H:i');
     }
+
+    public function getTanggalAttribute()
+    {
+        \Carbon\Carbon::setLocale('id');
+    return \Carbon\Carbon::parse($this->attributes['tanggal'])
+       ->translatedFormat('l, d F Y H:i');
+    }
 }
