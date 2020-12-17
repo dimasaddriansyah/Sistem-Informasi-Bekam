@@ -177,30 +177,36 @@
                         <input
                           type="text"
                           name="nama"
-                          class="form-control"
+                          class="form-control @error('nama') is-invalid @enderror"
+                          value="{{ old('nama') }}"
                           id="exampleInputnama"
                           placeholder="Nama Layanan"
                         />
-                      </div>
+                        @if ($errors->has('nama')) <span class="invalid-feedback"><strong>{{ $errors->first('nama') }}</strong></span> @endif
+                    </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Deskripsi</label>
                         <input
                           type="text"
                           name="deskripsi"
-                          class="form-control"
+                          class="form-control @error('deskripsi') is-invalid @enderror"
+                          value="{{ old('deskripsi') }}"
                           id="exampleInputdeskripsi"
                           placeholder="Deskripsi Layanan"
                         />
-                      </div>
+                        @if ($errors->has('deskripsi')) <span class="invalid-feedback"><strong>{{ $errors->first('deskripsi') }}</strong></span> @endif
+                    </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">harga</label>
                         <input
                           type="number"
                           name="harga"
-                          class="form-control"
+                          class="form-control @error('harga') is-invalid @enderror"
+                          value="{{ old('harga') }}"
                           id="exampleInputharga"
                           placeholder="Harga"/>
-                      </div>
+                        @if ($errors->has('harga')) <span class="invalid-feedback"><strong>{{ $errors->first('harga') }}</strong></span> @endif
+                    </div>
                       <label for="exampleInputEmail1">Pilih Layanan</label>
                       <div class="form-check">
                         <input class="form-check-input" type="radio" name="pilihan" id="exampleRadios1" value="Tunggu Di Rumah" checked>

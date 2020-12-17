@@ -33,21 +33,7 @@
 
 <body>
 
-  <!-- ======= Top Bar ======= -->
-  <section id="topbar" class="d-none d-lg-block">
-    <div class="container d-flex">
-      <div class="contact-info mr-auto">
-        <i class="icofont-envelope"></i><a href="mailto:contact@example.com">Bekam@gmail.com</a>
-        <i class="icofont-phone phone-icon"></i> +no telp
-      </div>
-      <div class="social-links">
-
-        <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
-        <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
-
-      </div>
-    </div>
-  </section>
+ 
 
   <!-- ======= Header ======= -->
   <header id="header" class="d-flex align-items-center">

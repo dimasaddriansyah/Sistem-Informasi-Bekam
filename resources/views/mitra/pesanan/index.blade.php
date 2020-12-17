@@ -150,6 +150,12 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                      <div class="col">
+                        <a href="{{url('/mitra/pesanan/create')}}" class="btn btn-primary"><i class="fa fa-plus p-r-5"></i> Tambah Pesanan</a>
+                      </div>
+                    </div></div>
                 <div class="col-12 mt-3">
                     <div class="card">
                         <div class="card-body">
@@ -174,7 +180,7 @@
                                             <td>
                                                 <center>
                                                     <button type="button" data-toggle="modal" data-target="#modalFoto{{ $pesanan->id_pesanan }}">
-                                                        <img src="{{ asset('uploads/'.$pesanan->bukti_pembayaran) }}" alt="" height="200px" weight="200ox">
+                                                        <img src="{{ asset('uploads/'.$pesanan->bukti_pembayaran) }}" alt="" height="100px" weight="100px">
                                                     </button>
                                                 </center>
                                             </td>

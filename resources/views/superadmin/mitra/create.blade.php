@@ -183,49 +183,59 @@
                         <input
                           type="text"
                           name="nama"
-                          class="form-control"
+                          class="form-control @error('nama') is-invalid @enderror"
+                          value="{{ old('nama') }}"
                           id="exampleInputnama"
                           placeholder="Nama Mitra"
-                        />
-                      </div>
+                          style="text-transform: capitalize;"/>
+                        @if ($errors->has('nama')) <span class="invalid-feedback"><strong>{{ $errors->first('nama') }}</strong></span> @endif
+                    </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Email</label>
                         <input
                           type="text"
                           name="email"
-                          class="form-control"
+                          class="form-control @error('email') is-invalid @enderror"
+                          value="{{ old('email') }}"
                           id="exampleInputemail"
                           placeholder="Alamat Email"
                         />
+                        @if ($errors->has('email')) <span class="invalid-feedback"><strong>{{ $errors->first('email') }}</strong></span> @endif
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Alamat</label>
                         <input
                           type="text"
                           name="alamat"
-                          class="form-control"
+                          class="form-control @error('alamat') is-invalid @enderror"
+                          value="{{ old('alamat') }}"
                           id="exampleInputalamat"
                           placeholder="Alamat"
-                        />
-                      </div>
+                          style="text-transform: capitalize;"/>
+                        @if ($errors->has('alamat')) <span class="invalid-feedback"><strong>{{ $errors->first('alamat') }}</strong></span> @endif
+                    </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">No. Handphone</label>
                         <input
                           type="number"
                           name="no_hp"
-                          class="form-control"
+                          class="form-control @error('no_hp') is-invalid @enderror"
+                          value="{{ old('no_hp') }}"
                           id="exampleInputharga"
                           placeholder="no.handphone"/>
-                      </div>
+                        @if ($errors->has('no_hp')) <span class="invalid-feedback"><strong>{{ $errors->first('no_hp') }}</strong></span> @endif
+                    </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Password</label>
                         <input
                           type="password"
                           name="password"
-                          class="form-control"
+                          class="form-control @error('password') is-invalid @enderror"
+                          value="{{ old('password') }}"
                           id="exampleInputpassword"
                           placeholder="password"/>
-                      </div>
+                        @if ($errors->has('password')) <span class="invalid-feedback"><strong>{{ $errors->first('password') }}</strong></span> @endif
+                    </div>
                     <!-- /.card-body -->
                     <div class="card-footer">
                       <button class="btn btn-primary">

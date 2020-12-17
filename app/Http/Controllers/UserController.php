@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use Illuminate\Http\Request;
 use App\Transformers\UserTransformer;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,11 +12,10 @@ class UserController extends Controller
     {
         $users = $user->all();
 
-        /*return response()->json($users);*/
         return fractal()
-        ->collection($users)
-        ->transformWith(new UserTransformer)
-        ->toArray();
+            ->collection($users)
+            ->transformWith(new UserTransformer)
+            ->toArray();
     }
 
     public function profile(User $user)
@@ -25,20 +23,20 @@ class UserController extends Controller
         $user = $user->find(Auth::user()->id);
 
         return fractal()
-        ->item($user)
-        ->transformWith(new UserTransformer)
-        ->includePosts()
-        ->toArray();
+            ->item($user)
+            ->transformWith(new UserTransformer)
+            ->includePosts()
+            ->toArray();
     }
- 
+
     public function profileById(User $user, $id)
     {
         $user = $user->find($id);
 
         return fractal()
-        ->item($user)
-        ->transformWith(new UserTransformer)
-        ->includePosts()
-        ->toArray();
+            ->item($user)
+            ->transformWith(new UserTransformer)
+            ->includePosts()
+            ->toArray();
     }
 }

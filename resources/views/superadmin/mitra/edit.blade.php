@@ -178,45 +178,53 @@
                   <form role="form" action="{{ url('/editPostMitra')}}/{{ $mitra->id_mitra }}" method="post">
                     @csrf
                     <div class="card-body">
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Nama Mitra</label>
-                        <input
-                          type="text"
-                          name="nama"
-                          class="form-control"
-                          id="exampleInputnama"
-                          value="{{ $mitra->nama }}"
-                        />
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Email</label>
-                        <input
-                          type="text"
-                          name="email"
-                          class="form-control"
-                          id="exampleInputemail"
-                          value="{{ $mitra->email }}"
-                        />
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Alamat</label>
-                        <input
-                          type="text"
-                          name="alamat"
-                          class="form-control"
-                          id="exampleInputalamat"
-                          value="{{ $mitra->alamat }}"
-                        />
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">No. Handphone</label>
-                        <input
-                          type="number"
-                          name="no_hp"
-                          class="form-control"
-                          id="exampleInputharga"
-                          value="{{ $mitra->no_hp }}"/>
-                      </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Nama Mitra</label>
+                            <input
+                              type="text"
+                              name="nama"
+                              class="form-control @error('nama') is-invalid @enderror"
+                              value="{{ old('nama',$mitra->nama) }}"
+                              id="exampleInputnama"
+                              placeholder="Nama Mitra"
+                              style="text-transform: capitalize;"/>
+                            @if ($errors->has('nama')) <span class="invalid-feedback"><strong>{{ $errors->first('nama') }}</strong></span> @endif
+                        </div>
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Email</label>
+                            <input
+                              type="text"
+                              name="email"
+                              class="form-control @error('email') is-invalid @enderror"
+                              value="{{ old('email',$mitra->email) }}"
+                              id="exampleInputemail"
+                              placeholder="Alamat Email"
+                            />
+                            @if ($errors->has('email')) <span class="invalid-feedback"><strong>{{ $errors->first('email') }}</strong></span> @endif
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Alamat</label>
+                            <input
+                              type="text"
+                              name="alamat"
+                              class="form-control @error('alamat') is-invalid @enderror"
+                              value="{{ old('alamat',$mitra->alamat) }}"
+                              id="exampleInputalamat"
+                              placeholder="Alamat"
+                              style="text-transform: capitalize;"/>
+                            @if ($errors->has('alamat')) <span class="invalid-feedback"><strong>{{ $errors->first('alamat') }}</strong></span> @endif
+                        </div>
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">No. Handphone</label>
+                            <input
+                              type="number"
+                              name="no_hp"
+                              class="form-control @error('no_hp') is-invalid @enderror"
+                              value="{{ old('no_hp',$mitra->no_hp) }}"
+                              id="exampleInputharga"
+                              placeholder="no.handphone"/>
+                            @if ($errors->has('no_hp')) <span class="invalid-feedback"><strong>{{ $errors->first('no_hp') }}</strong></span> @endif
+                        </div>
                     <!-- /.card-body -->
                     <div class="card-footer">
                       <button class="btn btn-primary">

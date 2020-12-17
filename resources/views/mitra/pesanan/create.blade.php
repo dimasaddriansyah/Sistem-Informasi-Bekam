@@ -24,6 +24,8 @@
       href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
       rel="stylesheet"
     />
+    <script src="{{ asset('/js/tanggal.js') }}"></script>
+
   </head>
   <body class="hold-transition sidebar-mini">
     <div class="wrapper">
@@ -197,7 +199,7 @@
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Tanggal Pesan</label>
-                        <input type="datetime-local" class="form-control @error('tanggal') is-invalid @enderror" name="tanggal" value="{{ old('tanggal') }}">
+                        <button class="form-control text-left" id="tanggal" disabled></button>
 
                       </div>
                     <!-- /.card-body -->
