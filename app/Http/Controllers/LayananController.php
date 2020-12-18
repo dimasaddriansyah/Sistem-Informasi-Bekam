@@ -65,6 +65,27 @@ class LayananController extends Controller
     public function edit(Request $request, $id_layanan)
     {
         $layanan = Layanan::where('id_layanan', $id_layanan)->first();
+
+        $this->validate(
+            $request,
+            [
+                'nama'          => 'required|min:4|regex:/^[\pL\s\-]+$/u',
+                'deskripsi'     => 'required|min:4',
+                'harga'         => 'required|integer|min:1',
+                'pilihan'       => 'required',
+            ],
+            [
+                'nama.required'     => 'Harus Mengisi Bagian Nama Layanan!',
+                'nama.min'          => 'Nama Layanan Minimal 4 Huruf !',
+                'nama.regex'        => 'Inputan Nama Layanan Tidak Valid !',
+                'deskripsi.required' => 'Harus Mengisi Bagian Email !',
+                'deskripsi.min'      => 'Deskripsi Layanan Minimal 4 Huruf !',
+                'harga.required'    => 'Harus Menisi Bagian Harga !',
+                'harga.min'         => 'Inputan Harga Tidak Boleh Minus atau 0 !',
+                'pilihan.required'   => 'Harus Mengisi Bagian Alamat !',
+            ]
+        );
+
         $layanan->nama = ucwords($request->nama);
         $layanan->deskripsi = ucwords($request->deskripsi);
         $layanan->harga = $request->harga;

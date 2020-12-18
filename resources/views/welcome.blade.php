@@ -33,7 +33,7 @@
 
 <body>
 
- 
+
 
   <!-- ======= Header ======= -->
   <header id="header" class="d-flex align-items-center">
@@ -88,11 +88,11 @@
 
           <!-- Slide 2 -->
           <div class="carousel-item">
-            <div class="carousel-background"><img src="assets/img/slide/ " alt=""></div>
+            <div class="carousel-background"><img src="{{ asset('/tampilan-home/galeri/silde 2.png') }}" alt="" class="img-fluid"></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                {{-- <h2 class="animated fadeInDown">Lorem Ipsum Dolor</h2>
-                <p class="animated fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p> --}}
+                <h2 class="animated fadeInDown">Dapatkan Aplikasi Di Playstore</h2>
+                <p class="animated fadeInUp">Ayo segera unduh aplikasi kami di playstore untuk pemesanan bekam anda<br><a href="" class="btn btn-primary mt-5"><img src="tampilan-home/galeri/playstore.png" alt=""> Unduh Sekarang</a></p>
 
               </div>
             </div>
@@ -150,9 +150,11 @@
             <div class="section-title">
                 <h2>Manfaat Pengobatan Alternatif</h2>
             </div>
+            <!-- Desktop -->
+            <div class="d-none d-md-block">
             <div class="row ">
                 <div class="col-md-6">
-                    <img src="tampilan-home/galeri/undraw_a_whole_year_vnfm.png" class="img-fluid">
+                    <img src="tampilan-home/galeri/manfaat 3.png" class="img-fluid">
                 </div>
                 <div class="col-md-6  align-self-center">
                     <h3 class="col mt-xl-5">Menyembuhkan Sakit Kepala</h3>
@@ -165,18 +167,51 @@
                     <p class="col mt-3" style="line-height: 200%">Tidak cuma darah yang bisa dinormalkan dengan bekam, jaringan lemak juga bisa disedot dari pori-pori tubuh lewat bekam. Adapun target pembekaman adalah titik-titik yang banyak jaringan lemaknya.</p>
                 </div>
                 <div class="col-md-6">
-                    <img src="tampilan-home/galeri/undraw_Meditation_o89g.png" class="img-fluid">
+                    <img src="tampilan-home/galeri/manfaat 5.png" class="img-fluid">
                 </div>
             </div>
             <div class="row ">
                 <div class="col-md-6 ">
-                    <img src="tampilan-home/galeri/undraw_Jogging_t14q.png" class="img-fluid">
+                    <img src="tampilan-home/galeri/manfaat 4.png" class="img-fluid">
                 </div>
                 <div class="col-md-6 align-self-center">
-                    <h3 class="col mt-xl-5">Menyembuhkan Darah Tinggi</h3>
-                    <p class="col mt-3" style="line-height: 200%">Tekanan darah tinggi menyebabkan komplikasi, seperti penyakit jantung, ginjal dan diabetes. Untuk menanganinya, kamu bisa melakukan bekam di titik-titik khusus, seperti bahu, kepala dan badan.</p>
+                    <h3 class="col mt-xl-5">Terhindar Dari Berbagai Penyakit</h3>
+                    <p class="col mt-3" style="line-height: 200%">Penyakit memanglah banyak tetapi kamu harus melawannya agar tidak terserang penyakit. Untuk menanganinya, kamu bisa melakukan bekam di titik-titik khusus, seperti bahu, kepala dan badan.</p>
                 </div>
             </div>
+            </div>
+
+            <!-- Mobile -->
+            <div class="d-md-none d-sm-block">
+                <div class="row ">
+                    <div class="col-md-6">
+                        <img src="tampilan-home/galeri/manfaat 3.png" class="img-fluid">
+                    </div>
+                    <div class="col-md-6  align-self-center">
+                        <h3 class="col mt-xl-5">Menyembuhkan Sakit Kepala</h3>
+                        <p class="col mt-3" style="line-height: 200%">Untuk kamu yang sering mengalami sakit kepala dan migrain, tidak ada salahnya mencoba bekam. Adapun titik-titik terbaik untuk menyembuhkan keluhan ini adalah di leher dan kepala.</p>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-6 align-self-center">
+                        <img src="tampilan-home/galeri/manfaat 5.png" class="img-fluid">
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="col mt-xl-5">Menurunkan Berat Badan</h3>
+                        <p class="col mt-3" style="line-height: 200%">Tidak cuma darah yang bisa dinormalkan dengan bekam, jaringan lemak juga bisa disedot dari pori-pori tubuh lewat bekam. Adapun target pembekaman adalah titik-titik yang banyak jaringan lemaknya.</p>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-6 ">
+                        <img src="tampilan-home/galeri/manfaat 4.png" class="img-fluid">
+                    </div>
+                    <div class="col-md-6 align-self-center">
+                        <h3 class="col mt-xl-5">Terhindar Dari Berbagai Penyakit</h3>
+                        <p class="col mt-3" style="line-height: 200%">Penyakit memanglah banyak tetapi kamu harus melawannya agar tidak terserang penyakit. Untuk menanganinya, kamu bisa melakukan bekam di titik-titik khusus, seperti bahu, kepala dan badan.</p>
+                    </div>
+                </div>
+                </div>
+
         </div>
     </section>
 
@@ -188,11 +223,59 @@
     <section class="content" id="gallery">
         <div class="container">
             <div class="section-title">
-                <h2>Galerry</h2>
+                <h2>Gallery</h2>
             </div>
-            <div class="row ">
 
+             <!-- Desktop -->
+            <div class="d-none d-md-block">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="tampilan-home/galeri/galeri 1.jpg" alt="" class="img-fluid zoom">
+                </div>
+                <div class="col-md-4">
+                    <img src="tampilan-home/galeri/galeri 3.jpg" alt="" class="img-fluid zoom">
+                </div>
+                <div class="col-md-4">
+                    <img src="tampilan-home/galeri/galeri 2.jpg" alt="" class="img-fluid zoom">
+                </div>
             </div>
+            <div class="row mt-3">
+                <div class="col-md-4">
+                    <img src="tampilan-home/galeri/galeri 5.jpg" alt="" class="img-fluid zoom">
+                </div>
+                <div class="col-md-4">
+                    <img src="tampilan-home/galeri/galeri 4.jpg" alt="" class="img-fluid zoom">
+                </div>
+                <div class="col-md-4">
+                    <img src="tampilan-home/galeri/galeri 6.jpg" alt="" class="img-fluid zoom">
+                </div>
+            </div>
+            </div>
+
+            <!-- Mobile -->
+            <div class="d-md-none d-sm-block">
+                <div class="row">
+                    <div class="col-md-4 ">
+                        <img src="tampilan-home/galeri/galeri 1.jpg" alt="" class="img-fluid zoom">
+                    </div>
+                    <div class="col-md-4 mt-5">
+                        <img src="tampilan-home/galeri/galeri 3.jpg" alt="" class="img-fluid zoom">
+                    </div>
+                    <div class="col-md-4 mt-5">
+                        <img src="tampilan-home/galeri/galeri 2.jpg" alt="" class="img-fluid zoom">
+                    </div>
+                    <div class="col-md-4 mt-5">
+                        <img src="tampilan-home/galeri/galeri 5.jpg" alt="" class="img-fluid zoom">
+                    </div>
+                    <div class="col-md-4 mt-5">
+                        <img src="tampilan-home/galeri/galeri 4.jpg" alt="" class="img-fluid zoom">
+                    </div>
+                    <div class="col-md-4 mt-5">
+                        <img src="tampilan-home/galeri/galeri 6.jpg" alt="" class="img-fluid zoom">
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -207,6 +290,7 @@
             </div>
             <div class="row ">
                 @foreach($mitra as $mitra)
+                <div class="col-md-4 mt-4">
                 <div class="card mr-4 rounded">
                     <div class="card-body">
                         <h5 class="card-title" style="font-weight: 700">{{ $mitra->nama }}</h5>
@@ -226,6 +310,7 @@
                         </p>
                         <a href="#" class="btn btn-primary">Hubungi</a>
                     </div>
+                </div>
                 </div>
                 @endforeach
             </div>
